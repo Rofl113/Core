@@ -28,7 +28,7 @@ public:
 //	~Core();
 
 	bool initialize(const int argc, const char* argv[]);
-	void run();
+	int run();
 
 private:
 	std::unique_ptr<ICoreAppDelegate> m_appDelegate;

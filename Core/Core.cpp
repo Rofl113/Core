@@ -94,7 +94,7 @@ bool Core::initialize(const int argc, const char* argv[])
 	return true;
 }
 
-void Core::run()
+int Core::run()
 {
 	// Post Tick
 	const auto postTick = [this]
@@ -103,5 +103,5 @@ void Core::run()
 		m_managerMessages->processMessages();
 	};
 	// Run
-	m_render->run(nullptr, postTick);
+	return m_render->run(nullptr, postTick);
 }

@@ -21,6 +21,6 @@ public:
 	virtual std::shared_ptr<IScene> loadScene(const std::string& name) const = 0;
 	// Добавления сцены на экран
 	virtual bool showScene(const std::shared_ptr<IScene>& scene) const = 0;
-	//
-	virtual void run(const std::function<void()>& preTick, const std::function<void()>& postTick) = 0;
+	// Запуск GUI
+	virtual int run(const std::function<void()>& preTick, const std::function<void()>& postTick) = 0;
 };
