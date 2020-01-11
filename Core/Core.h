@@ -25,10 +25,12 @@ class Core
 	Core() = delete;
 public:
 	Core(std::unique_ptr<ICoreAppDelegate>&& appDelegate);
-//	~Core();
+	~Core();
 
 	bool initialize(const int argc, const char* argv[]);
 	int run();
+
+	const IRender* getRender() const;
 
 private:
 	std::unique_ptr<ICoreAppDelegate> m_appDelegate;

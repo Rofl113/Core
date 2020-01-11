@@ -18,6 +18,22 @@ Core::Core(std::unique_ptr<ICoreAppDelegate>&& appDelegate)
 
 }
 
+Core::~Core()
+{
+	// Remove ManagerMessages
+	m_managerMessages.reset();
+	// Remove ManagerScenes
+	m_managerScene.reset();
+	// Remove Render
+	m_render.reset();
+	// Remove ManagerDescriptionScene
+	m_managerDescriptionScene.reset();
+	// Remove FactoryScene
+	m_factoryScene.reset();
+	// Remove SessionApp
+	m_sessionApp.reset();
+}
+
 bool Core::initialize(const int argc, const char* argv[])
 {
 	// Check AppDelegate
@@ -104,4 +120,9 @@ int Core::run()
 	};
 	// Run
 	return m_render->run(nullptr, postTick);
+}
+
+const IRender* Core::getRender() const
+{
+	return m_render.get();
 }
