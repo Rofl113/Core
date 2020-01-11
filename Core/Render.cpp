@@ -5,8 +5,9 @@
 
 
 
-Render::Render(const IFactoryScene& factoryScene, const IManagerDescriptionScene& managerDescriptionScene)
-    : m_factoryScene(factoryScene)
+Render::Render(const SessionApp& sessionApp, const IFactoryScene& factoryScene, const IManagerDescriptionScene& managerDescriptionScene)
+    : m_sessionApp(sessionApp)
+    , m_factoryScene(factoryScene)
     , m_managerDescriptionScene(managerDescriptionScene)
 {
 
