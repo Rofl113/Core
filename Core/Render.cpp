@@ -15,7 +15,7 @@ Render::Render(const SessionApp& sessionApp, const IFactoryScene& factoryScene, 
 
 std::shared_ptr<IScene> Render::loadScene(const std::string& name) const
 {
-	if (const auto& description = m_managerDescriptionScene.getDescriptionScene(name))
+	if (const auto& description = m_managerDescriptionScene.getDescription(name))
 	{
 		if (const auto& scene = m_factoryScene.createScene(description))
 		{

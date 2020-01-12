@@ -7,12 +7,12 @@
 
 class ManagerDescriptionScene : public IManagerDescriptionScene
 {
-	ManagerDescriptionScene() = delete;
 public:
-	explicit ManagerDescriptionScene(const std::map<std::string, std::shared_ptr<IDescriptionScene>>&& descriptions);
+	// Установка данных по сцене
+	virtual void registerDescription(const std::string& name, const std::shared_ptr<IDescriptionScene>& description) override;
 	// Получить данные по сцене
-	virtual const std::shared_ptr<IDescriptionScene>& getDescriptionScene(const std::string& name) const override;
+	virtual const std::shared_ptr<IDescriptionScene>& getDescription(const std::string& name) const override;
 
 private:
-	const std::map<std::string, std::shared_ptr<IDescriptionScene>> m_descriptions;
+	std::map<std::string, std::shared_ptr<IDescriptionScene>> m_descriptions;
 };

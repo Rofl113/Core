@@ -14,7 +14,7 @@ public:
 	ManagerScene(const IRender& render);
 	virtual ~ManagerScene() override;
 	// Получить сцену по имени
-	virtual std::shared_ptr<IScene> loadScene(const std::string& name) override;
+	virtual std::shared_ptr<IScene> loadScene(const std::string& name) const override;
 	// Текущая сцена на экране
 	virtual const std::shared_ptr<IScene>& top() override;
 	// Добавления сцены на экран

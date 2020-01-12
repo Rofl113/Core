@@ -18,7 +18,7 @@ ManagerScene::~ManagerScene()
 	}
 }
 
-std::shared_ptr<IScene> ManagerScene::loadScene(const std::string& name)
+std::shared_ptr<IScene> ManagerScene::loadScene(const std::string& name) const
 {
 	return m_render.loadScene(name);
 }

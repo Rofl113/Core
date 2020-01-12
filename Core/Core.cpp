@@ -122,7 +122,7 @@ int Core::run()
 	return m_render->run(nullptr, postTick);
 }
 
-const IRender* Core::getRender() const
+IManagerScene* Core::getManagerScene() const
 {
-	return m_render.get();
+	return m_managerScene.get();
 }

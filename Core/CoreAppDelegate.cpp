@@ -16,7 +16,7 @@ std::unique_ptr<SessionApp> CoreAppDelegate::createSessionApp(const int /*argc*/
 std::unique_ptr<IManagerDescriptionScene> CoreAppDelegate::createManagerDescriptionScene(const SessionApp& /*sessionApp*/)
 {
 	// TODO: надо сделать оригинал для Cocos2d
-	return std::unique_ptr<IManagerDescriptionScene>(new ManagerDescriptionScene(std::map<std::string, std::shared_ptr<IDescriptionScene>>{}));
+	return std::unique_ptr<IManagerDescriptionScene>(new ManagerDescriptionScene());
 }
 
 std::unique_ptr<IManagerScene> CoreAppDelegate::createManagerScene(const SessionApp& /*sessionApp*/, const IRender& render)

@@ -30,7 +30,7 @@ public:
 	bool initialize(const int argc, const char* argv[]);
 	int run();
 
-	const IRender* getRender() const;
+	IManagerScene* getManagerScene() const;
 
 private:
 	std::unique_ptr<ICoreAppDelegate> m_appDelegate;
