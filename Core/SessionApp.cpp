@@ -18,6 +18,11 @@ void SessionApp::setSize(const std::pair<size_t, size_t>& size)
 	m_size = size;
 }
 
+void SessionApp::setResizable(const bool resizable)
+{
+	m_resizable = resizable;
+}
+
 const std::string& SessionApp::getPath() const
 {
 	return m_path;
@@ -31,4 +36,9 @@ const std::string& SessionApp::getName() const
 const std::pair<size_t, size_t>& SessionApp::getSize() const
 {
 	return m_size;
+}
+
+bool SessionApp::getResizable() const
+{
+	return m_resizable;
 }
