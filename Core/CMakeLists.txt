@@ -26,4 +26,5 @@ set(Core_SOURCES
 
 add_library(Core_LIB STATIC ${Core_SOURCES})
 
-target_link_libraries(Core_LIB PUBLIC StateMachine_LIB)
+find_package(StateMachine_LIB)
+target_link_libraries(Core_LIB StateMachine_LIB)
