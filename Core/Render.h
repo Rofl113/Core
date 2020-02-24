@@ -5,7 +5,6 @@
 
 class IFactoryScene;
 class IManagerDescriptionScene;
-class SessionApp;
 
 class EventListenerCustom;
 
@@ -14,7 +13,7 @@ class Render : public IRender
 {
 	Render() = delete;
 public:
-	explicit Render(const SessionApp& sessionApp, const IFactoryScene& factoryScene, const IManagerDescriptionScene& managerDescriptionScene);
+	explicit Render(const IFactoryScene& factoryScene, const IManagerDescriptionScene& managerDescriptionScene);
 	// Загрузка сцены
 	virtual std::shared_ptr<IScene> loadScene(const std::string& name) const override;
 	// Добавления сцены на экран
@@ -25,7 +24,6 @@ protected:
 	virtual void handleShowScene(const std::shared_ptr<IScene>& scene) const = 0;
 
 private:
-	const SessionApp& m_sessionApp;
 	const IFactoryScene& m_factoryScene;
 	const IManagerDescriptionScene& m_managerDescriptionScene;
 };
