@@ -22,6 +22,8 @@ set(Core_SOURCES
     ManagerScene.cpp
     CoreAppDelegate.h
     CoreAppDelegate.cpp
+    MessagesCore.h
+    MessagesCore.cpp
 )
 
 add_library(Core_LIB STATIC ${Core_SOURCES})

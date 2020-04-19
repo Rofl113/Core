@@ -10,6 +10,7 @@
 #include "IFactoryScene.h"
 #include "IManagerDescriptionScene.h"
 #include "IManagerScene.h"
+#include "MessagesCore.h"
 
 
 Core::Core(std::unique_ptr<ICoreAppDelegate>&& appDelegate)
@@ -115,6 +116,11 @@ int Core::run()
 	// Post Tick
 	const auto postTick = [this]
 	{
+        if (not m_run)
+        {
+            m_run = true;
+            m_managerMessages->pushMessages(std::make_shared<MessageCoreAppRun>());
+        }
 		// Отправка сообщений (которые накопились)
 		m_managerMessages->processMessages();
 	};

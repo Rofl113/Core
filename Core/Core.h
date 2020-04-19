@@ -40,4 +40,6 @@ private:
 	std::unique_ptr<IRender> m_render;
 	std::unique_ptr<IManagerScene> m_managerScene;
 	std::unique_ptr<ManagerMessages> m_managerMessages;
+
+    bool m_run = false;
 };
