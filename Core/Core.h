@@ -23,9 +23,11 @@ class ManagerMessages;
 class Core
 {
 	Core() = delete;
+    Core(const Core&) = delete;
+    Core& operator= (const Core&) = delete;
 public:
 	Core(std::unique_ptr<ICoreAppDelegate>&& appDelegate);
-	~Core();
+    virtual ~Core();
 
 	bool initialize(const int argc, const char* argv[]);
 	int run();
