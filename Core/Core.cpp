@@ -133,6 +133,11 @@ void Core::close()
 	return m_render->close();
 }
 
+bool Core::pushMessage(PtrMachineMessage&& msg)
+{
+	return m_managerMessages->pushMessages(std::move(msg));
+}
+
 IManagerScene* Core::getManagerScene() const
 {
 	return m_managerScene.get();

@@ -1,6 +1,8 @@
 #pragma once
 #include <memory>
 #include <functional>
+// StateMachine lib
+#include <StateMachine/MachineMessage.h>
 
 
 
@@ -32,6 +34,7 @@ public:
 	bool initialize(const int argc, const char* argv[]);
 	int run();
 	void close();
+	bool pushMessage(PtrMachineMessage&& msg);
 
 	IManagerScene* getManagerScene() const;
 
