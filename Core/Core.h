@@ -31,6 +31,7 @@ public:
 
 	bool initialize(const int argc, const char* argv[]);
 	int run();
+	void close();
 
 	IManagerScene* getManagerScene() const;
 

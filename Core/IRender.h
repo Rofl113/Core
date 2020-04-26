@@ -23,4 +23,6 @@ public:
 	virtual bool showScene(const std::shared_ptr<IScene>& scene) const = 0;
 	// Запуск GUI
 	virtual int run(const std::function<void()>& preTick, const std::function<void()>& postTick) = 0;
+	// Close GUI
+	virtual void close() = 0;
 };

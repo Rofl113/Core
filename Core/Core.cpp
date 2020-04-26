@@ -128,6 +128,11 @@ int Core::run()
 	return m_render->run(nullptr, postTick);
 }
 
+void Core::close()
+{
+	return m_render->close();
+}
+
 IManagerScene* Core::getManagerScene() const
 {
 	return m_managerScene.get();
