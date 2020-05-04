@@ -138,6 +138,11 @@ bool Core::pushMessage(PtrMachineMessage&& msg)
 	return m_managerMessages->pushMessages(std::move(msg));
 }
 
+SessionApp* Core::getSessionApp() const
+{
+	return m_sessionApp.get();
+}
+
 IManagerScene* Core::getManagerScene() const
 {
 	return m_managerScene.get();

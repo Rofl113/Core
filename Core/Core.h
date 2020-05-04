@@ -36,6 +36,7 @@ public:
 	void close();
 	bool pushMessage(PtrMachineMessage&& msg);
 
+	SessionApp* getSessionApp() const;
 	IManagerScene* getManagerScene() const;
 
 private:
