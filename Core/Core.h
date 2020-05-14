@@ -39,6 +39,9 @@ public:
 	SessionApp* getSessionApp() const;
 	IManagerScene* getManagerScene() const;
 
+protected:
+	virtual void handleTickPost();
+
 private:
 	std::unique_ptr<ICoreAppDelegate> m_appDelegate;
 	std::unique_ptr<SessionApp> m_sessionApp;

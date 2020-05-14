@@ -116,13 +116,7 @@ int Core::run()
 	// Post Tick
 	const auto postTick = [this]
 	{
-        if (not m_run)
-        {
-            m_run = true;
-            m_managerMessages->pushMessages(std::make_shared<MessageCoreAppRun>());
-        }
-		// Отправка сообщений (которые накопились)
-		m_managerMessages->processMessages();
+		this->handleTickPost();
 	};
 	// Run
 	return m_render->run(nullptr, postTick);
@@ -146,4 +140,15 @@ SessionApp* Core::getSessionApp() const
 IManagerScene* Core::getManagerScene() const
 {
 	return m_managerScene.get();
+}
+
+void Core::handleTickPost()
+{
+	if (not m_run)
+	{
+		m_run = true;
+		m_managerMessages->pushMessages(std::make_shared<MessageCoreAppRun>());
+	}
+	// Отправка сообщений (которые накопились)
+	m_managerMessages->processMessages();
 }
