@@ -18,6 +18,11 @@ void SessionApp::setSize(const std::pair<size_t, size_t>& size)
 	m_size = size;
 }
 
+void SessionApp::setSizeDesign(const std::pair<size_t, size_t>& size)
+{
+	m_sizeDesign = size;
+}
+
 void SessionApp::setResizable(const bool resizable)
 {
 	m_resizable = resizable;
@@ -36,6 +41,11 @@ const std::string& SessionApp::getName() const
 const std::pair<size_t, size_t>& SessionApp::getSize() const
 {
 	return m_size;
+}
+
+const std::pair<size_t, size_t>& SessionApp::getSizeDesign() const
+{
+	return m_sizeDesign;
 }
 
 bool SessionApp::getResizable() const
