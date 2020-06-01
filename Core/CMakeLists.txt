@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.6) # Проверка версии CMake.
 
-add_definitions(-Wextra -Wno-unused-parameter)
-
 set(Core_SOURCES
     Core.h
     Core.cpp
